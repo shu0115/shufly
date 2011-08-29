@@ -1,0 +1,34 @@
+<h1>Listing members</h1>
+
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <th>Group</th>
+    <th>Name</th>
+    <th>Group number</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.group_id %></td>
+    <td><%= member.name %></td>
+    <td><%= member.group_number %></td>
+    <td><%= link_to t("menu.show"), :action => "show", :id => member.id %></td>
+    <td><%= link_to t("menu.edit"), :action => "edit", :id => member.id %></td>
+    <td><%= link_to t("menu.destroy"), { :action => "destroy", :id => member.id }, :confirm => "本当に削除してよろしいですか？" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t("menu.new"), :action => "new" %>
+
+<br />
+<br />
+
+<%= link_to t("menu.top"), :root %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @group.name %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @group.number %>
+</p>
+
+
+<%= link_to t("menu.edit"), :action => "edit", :id => @group.id %> |
+<%= link_to t("menu.list"), :action => "index" %>
