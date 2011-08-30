@@ -38,9 +38,8 @@ class GroupsController < ApplicationController
   #--------#
   def create
     @group = Group.new( params[:group] )
+    @group.user_id = session[:user_id]
     
-    # TODO: @group.user_id追加
-
     if @group.save
       flash[:notice] = "Group was successfully created."
       redirect_to :action => "index"

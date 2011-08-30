@@ -30,5 +30,12 @@ gem 'sqlite3'
 #   gem 'webrat'
 # end
 
+# For Heroku
 gem 'heroku'
 gem 'rake', '0.8.7'
+
+# For twitter-auth
+gem 'twitter-auth', :require => 'twitter_auth/engine', :git => 'git://github.com/rokudenashi/twitter-auth.git', :branch => 'rails_3'
+gem 'oauth'
+gem 'ezcrypto'
+gem 'json'

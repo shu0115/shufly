@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<%# ログイン判定 %>
+<% unless session[:user_id].blank? %>
+  <%# ログイン後 %>
+  <%= link_to t("menu.logout"), logout_path, :confirm => 'ログアウトしますか？' %>
+<% else %>
+  <%# ログイン前 %>
+  <%= link_to t("menu.login"), login_path %>
+<% end %>
+
+<br />
+<br />
+
 <%= yield %>
 
 </body>

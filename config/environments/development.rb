@@ -22,5 +22,7 @@ Shufly::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-end
 
+  # Twitter OAuth Local Setting
+  require "#{Rails.root}/config/local_setting.rb"
+end
