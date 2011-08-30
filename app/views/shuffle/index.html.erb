@@ -1,12 +1,11 @@
-<h1>Shuffle</h1>
 
-<p id="notice"><%= notice %></p>
-
+<% if @group.allow_manage?( session[:user_id] ) %>
 <p>
 <%= link_to t("group.shuffle"), :action => "index", :group_id => @group.id, :flag => "shuffle" %>
 　<%= link_to t("group.reset"), :action => "index", :group_id => @group.id, :flag => "reset" %>
 　<%= link_to t("group.name_order"), :action => "index", :group_id => @group.id, :flag => "name_order" %>
 </p>
+<% end %>
 
 <table>
   <tr>
@@ -16,6 +15,7 @@
   <% } %>
   </tr>
   
+<% if @group.allow_manage?( session[:user_id] ) %>
   <tr>
   <% @group.number.times { |index| %>
     <td>
@@ -29,6 +29,7 @@
     </td>
   <% } %>
   </tr>
+<% end %>
 
   <% unless @member_hash.blank? %>
 
@@ -48,13 +49,15 @@
     </td>
   <% } %>
   </tr>
-  
+
+<% if @group.allow_manage?( session[:user_id] ) %>
   <tr>
     <td colspan="<%= @group.number %>">
       <%# 順序確定 %>
       <%= f.submit t("group.fix"), :disable_with => t("group.fix") %>
     </td>
   </tr>
+<% end %>
   <% end %>
   
   <% end %>

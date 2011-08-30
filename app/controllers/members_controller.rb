@@ -5,9 +5,11 @@ class MembersController < ApplicationController
   # index #
   #-------#
   def index
-    @members = Member.where( :group_id => params[:group_id] ).order( "group_number ASC, order_number ASC, id ASC" )
+    @group = Group.where( :id => params[:group_id] ).first
+    @members = Member.where( :group_id => @group.id ).order( "group_number ASC, order_number ASC, id ASC" )
   end
 
+=begin
   #------#
   # show #
   #------#
@@ -60,6 +62,7 @@ class MembersController < ApplicationController
       render :action => "edit", :id => params[:id]
     end
   end
+=end
 
   #---------#
   # destroy #

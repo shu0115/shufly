@@ -1,11 +1,9 @@
-<h1>Listing groups</h1>
 
-<p id="notice"><%= notice %></p>
-
+<% unless @groups.blank? %>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Number</th>
+    <th><%= t("group.name") %></th>
+    <th><%= t("group.number") %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -28,4 +26,6 @@
 
 <br />
 
-<%= link_to t("menu.new"), :action => "new" %>
+<% end %>
+
+<%= link_to t("group.new"), :action => "new" %>

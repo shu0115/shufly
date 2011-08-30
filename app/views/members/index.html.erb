@@ -1,37 +1,41 @@
-<h1>Listing members</h1>
-
-<p id="notice"><%= notice %></p>
 
 <table>
   <tr>
-    <th>Group</th>
-    <th>Name</th>
-    <th>Group number</th>
+    <% if false %>
+    <th><%= t("member.group") %></th>
+    <% end %>
+    <th><%= t("member.name") %></th>
+    <th><%= t("member.group_number") %></th>
     <% if false %>
     <th></th>
     <th></th>
     <% end %>
+<% if @group.allow_manage?( session[:user_id] ) %>
     <th></th>
+<% end %>
   </tr>
 
 <% @members.each do |member| %>
   <tr>
+    <% if false %>
     <td><%= member.group_id %></td>
+    <% end %>
     <td><%= member.name %></td>
     <td><%= member.group_number %></td>
     <% if false %>
     <td><%= link_to t("menu.show"), :action => "show", :id => member.id %></td>
     <td><%= link_to t("menu.edit"), :action => "edit", :id => member.id %></td>
     <% end %>
+<% if @group.allow_manage?( session[:user_id] ) %>
     <td><%= link_to t("menu.destroy"), { :action => "destroy", :id => member.id }, :confirm => "本当に削除してよろしいですか？" %></td>
+<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%#= link_to t("menu.new"), :action => "new" %>
-<%= link_to t("group.shuffle"), :controller => "shuffle", :group_id => params[:group_id] %>
+<%= link_to t("group.shuffle"), :controller => "shuffle", :group_id => @group.id %>
 
 <br />
 <br />
