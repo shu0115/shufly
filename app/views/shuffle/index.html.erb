@@ -1,0 +1,68 @@
+<h1>Shuffle</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p><%= link_to t("group.shuffle"), :action => "index", :group_id => @group.id, :flag => "shuffle" %></p>
+
+<p><%= link_to t("group.reset"), :action => "index", :group_id => @group.id, :flag => "reset" %></p>
+
+<p><%= link_to t("group.name_order"), :action => "index", :group_id => @group.id, :flag => "name_order" %></p>
+
+<table>
+  <tr>
+  <% @group.number.times { |index| %>
+    <%# グループ番号 %>
+    <th>Group <%= index + 1 %></th>
+  <% } %>
+  </tr>
+  
+  <tr>
+  <% @group.number.times { |index| %>
+    <td>
+    <%# メンバー追加 %>
+    <%= form_for :member, :url => { :action => "add_member" } do |f| %>
+      <%= f.text_field :name %>
+      <%= f.hidden_field :group_id, { :value => @group.id } %>
+      <%= f.hidden_field :group_number, { :value => (index + 1) } %>
+      <%= f.submit t("menu.add"), :disable_with => t("menu.add") %>
+    <% end %>
+    </td>
+  <% } %>
+  </tr>
+
+  <%# 順序確定 %>
+  <%= form_for :members, :url => { :action => "fix", :group_id => @group.id } do |f| %>
+  <tr>
+  <% @group.number.times { |index| %>
+    <td>
+    <%# グループメンバー %>
+    <% @member_hash[index + 1].shuffle! if params[:flag] == "shuffle"  %>
+    
+    <% print "[ @member_hash ] : "; p @member_hash[index + 1].blank? ; %>
+    <% unless @member_hash[index + 1].blank? %>
+    <% @member_hash[index + 1].each_with_index { |member,order_number| %>
+      <%= member[:name] %><br />
+      <%= f.hidden_field member[:id], { :value => order_number + 1 } %>
+    <% } %>
+    <% end %>
+    </td>
+  <% } %>
+  </tr>
+  
+  <tr>
+    <td colspan="<%= @group.number %>">
+      <%#= f.hidden_field :group_id, { :value => @group.id } %>
+      <%= f.submit t("group.fix"), :disable_with => t("group.fix") %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to "メンバー一覧", :controller => "members", :action => "index", :group_id => @group.id %>
+
+<br />
+<br />
+
+<%= link_to t("menu.top"), :root %>

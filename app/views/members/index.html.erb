@@ -7,8 +7,10 @@
     <th>Group</th>
     <th>Name</th>
     <th>Group number</th>
+    <% if false %>
     <th></th>
     <th></th>
+    <% end %>
     <th></th>
   </tr>
 
@@ -17,8 +19,10 @@
     <td><%= member.group_id %></td>
     <td><%= member.name %></td>
     <td><%= member.group_number %></td>
+    <% if false %>
     <td><%= link_to t("menu.show"), :action => "show", :id => member.id %></td>
     <td><%= link_to t("menu.edit"), :action => "edit", :id => member.id %></td>
+    <% end %>
     <td><%= link_to t("menu.destroy"), { :action => "destroy", :id => member.id }, :confirm => "本当に削除してよろしいですか？" %></td>
   </tr>
 <% end %>
@@ -26,7 +30,8 @@
 
 <br />
 
-<%= link_to t("menu.new"), :action => "new" %>
+<%#= link_to t("menu.new"), :action => "new" %>
+<%= link_to t("group.shuffle"), :controller => "shuffle", :group_id => params[:group_id] %>
 
 <br />
 <br />

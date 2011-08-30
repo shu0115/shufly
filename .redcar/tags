@@ -1,4 +1,4 @@
-1314598210
+1314675278
 Application	/Users/matsumoto/workspace/shufly/config/application.rb	  class Application 
 ApplicationController	/Users/matsumoto/workspace/shufly/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/Users/matsumoto/workspace/shufly/app/helpers/application_helper.rb	module ApplicationHelper
@@ -17,6 +17,7 @@ MembersController	/Users/matsumoto/workspace/shufly/app/controllers/members_cont
 MembersControllerTest	/Users/matsumoto/workspace/shufly/test/functional/members_controller_test.rb	class MembersControllerTest 
 MembersHelper	/Users/matsumoto/workspace/shufly/app/helpers/members_helper.rb	module MembersHelper
 MembersHelperTest	/Users/matsumoto/workspace/shufly/test/unit/helpers/members_helper_test.rb	class MembersHelperTest 
+ShuffleController	/Users/matsumoto/workspace/shufly/app/controllers/shuffle_controller.rb	class ShuffleController 
 Shufly	/Users/matsumoto/workspace/shufly/config/application.rb	module Shufly
 Str	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function Str(key, holder, stack)
 TestCase	/Users/matsumoto/workspace/shufly/test/test_helper.rb	class ActiveSupport::TestCase
@@ -25,6 +26,7 @@ abs	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function a
 absolutize	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function absolutize(element)
 addMethods	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function addMethods(source)
 addText	/Users/matsumoto/workspace/shufly/public/javascripts/controls.js	function addText(mode, condition)
+add_member	/Users/matsumoto/workspace/shufly/app/controllers/shuffle_controller.rb	  def add_member
 all	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function all(iterator, context)
 any	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function any(iterator, context)
 argumentNames	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function argumentNames()
@@ -87,6 +89,7 @@ findElement	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	fu
 fire	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function fire(element, eventName, memo, bubble)
 fireContentLoadedEvent	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function fireContentLoadedEvent()
 first	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function first()
+fix	/Users/matsumoto/workspace/shufly/app/controllers/shuffle_controller.rb	  def fix
 flatten	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function flatten()
 floor	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function floor()
 get	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function get(key)
@@ -105,6 +108,7 @@ include	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	functi
 include	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function include(value)
 index	/Users/matsumoto/workspace/shufly/app/controllers/groups_controller.rb	  def index
 index	/Users/matsumoto/workspace/shufly/app/controllers/members_controller.rb	  def index
+index	/Users/matsumoto/workspace/shufly/app/controllers/shuffle_controller.rb	  def index
 index	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function index(value)
 indexOf	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function indexOf(item, i)
 initialize	/Users/matsumoto/workspace/shufly/public/javascripts/prototype.js	function initialize(object)

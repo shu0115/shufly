@@ -5,7 +5,7 @@ class MembersController < ApplicationController
   # index #
   #-------#
   def index
-    @members = Member.all
+    @members = Member.where( :group_id => params[:group_id] ).order( "group_number ASC, order_number ASC, id ASC" )
   end
 
   #------#
@@ -68,7 +68,7 @@ class MembersController < ApplicationController
     @member = Member.find( params[:id] )
     @member.destroy
 
-    redirect_to :action => "index"
+    redirect_to :action => "index", :group_id => @member.group_id
   end
 
 end

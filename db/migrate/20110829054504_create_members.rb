@@ -4,6 +4,7 @@ class CreateMembers < ActiveRecord::Migration
       t.integer :group_id
       t.string :name
       t.integer :group_number
+      t.integer :order_number
 
       t.timestamps
     end

@@ -38,6 +38,8 @@ class GroupsController < ApplicationController
   #--------#
   def create
     @group = Group.new( params[:group] )
+    
+    # TODO: @group.user_id追加
 
     if @group.save
       flash[:notice] = "Group was successfully created."

@@ -19,3 +19,10 @@ ja:
     list: List
     prev: Prev
     next: Next
+    add: 追加
+
+  group:
+    member: Member
+    shuffle: Shuffle
+    fix: Fix
+    reset: Reset

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20110829054504) do
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.integer  "number"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110829054504) do
     t.integer  "group_id"
     t.string   "name"
     t.integer  "group_number"
+    t.integer  "order_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
