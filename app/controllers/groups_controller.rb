@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # index #
   #-------#
   def index
-    @groups = Group.all
+    @groups = Group.where( :user_id => session[:user_id] )
   end
 
   #------#
@@ -41,7 +41,7 @@ class GroupsController < ApplicationController
     @group.user_id = session[:user_id]
     
     if @group.save
-      flash[:notice] = "Group was successfully created."
+      flash[:notice] = "グループを作成しました。"
       redirect_to :action => "index"
     else
       render :action => "new"
@@ -55,7 +55,7 @@ class GroupsController < ApplicationController
     @group = Group.find( params[:id] )
 
     if @group.update_attributes( params[:group] )
-      flash[:notice] = "Group was successfully updated."
+      flash[:notice] = "グループを更新しました。"
       redirect_to :action => "show", :id => params[:id]
     else
       render :action => "edit", :id => params[:id]

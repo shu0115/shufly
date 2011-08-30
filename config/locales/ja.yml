@@ -23,6 +23,7 @@ ja:
 
   group:
     member: Member
-    shuffle: Shuffle
+    shuffle: シャッフル
     fix: Fix
-    reset: Reset
+    reset: リセット
+    name_order: 名前順

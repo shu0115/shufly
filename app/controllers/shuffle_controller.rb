@@ -22,8 +22,6 @@ class ShuffleController < ApplicationController
       @member_hash[member.group_number].push( :id => member.id, :name => member.name )
     }
     
-    print "[ @member_hash ] : "; p @member_hash ;
-    
     @member = Member.new
   end
   
@@ -33,9 +31,10 @@ class ShuffleController < ApplicationController
   def add_member
     @member = Member.new( params[:member] )
 
-    if @member.save
-      flash[:notice] = "新規メンバーを追加しました。"
-    else
+    unless @member.save
+#    if @member.save
+#      flash[:notice] = "新規メンバーを追加しました。"
+#    else
       flash[:notice] = "新規メンバー追加に失敗しました。"
     end
     
