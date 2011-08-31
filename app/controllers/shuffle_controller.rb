@@ -45,11 +45,7 @@ class ShuffleController < ApplicationController
   # fix #
   #-----#
   def fix
-    print "[ params ] : "; p params ;
     params[:members].each_pair{ |key,value|
-      print "[ key ] : "; p key ;
-      print "[ value ] : "; p value ;
-      puts
       member = Member.where( :id => key ).first
       member.order_number = value
       member.save

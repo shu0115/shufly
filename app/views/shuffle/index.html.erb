@@ -37,9 +37,10 @@
   <tr>
   <% @group.number.times { |index| %>
     <td>
-    <%# グループメンバー %>
+    <%# シャッフル %>
     <% @member_hash[index + 1].shuffle! if params[:flag] == "shuffle"  %>
-    
+
+    <%# グループメンバー %>
     <% unless @member_hash[index + 1].blank? %>
     <% @member_hash[index + 1].each_with_index { |member,order_number| %>
       <%= member[:name] %><br />
@@ -59,7 +60,7 @@
   </tr>
 <% end %>
   <% end %>
-  
+
   <% end %>
 </table>
 
